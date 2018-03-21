@@ -1,0 +1,185 @@
+// custom tooltips
+@mixin tool-tip {
+  &:hover {
+    .tool-tip {
+      display: initial;
+
+      @extend .fade-in-top;
+    }
+  }
+  .tool-tip {
+    font-size: rem(12px);
+    font-weight: 700;
+    line-height: 1.2;
+
+    position: absolute;
+    top: - gratio(6);
+    right: 0;
+    right: gratio(1);
+    
+    display: none;
+
+    width: gratio(7);
+    padding: gratio(2);
+
+    letter-spacing: .03em;
+    word-wrap: break-word !important;
+
+    color: white;
+    border-radius: 3px;
+    background-color: color(grey-dark);
+
+    @include boxShadow();
+    &:after {
+      position: absolute;
+      top: 34px;
+      right: gratio(3);
+
+      display: inline-block;
+
+      width: 15px;
+      height: 15px;
+
+      content: '';
+      transform: rotate(136deg);
+
+      border-radius: 2px;
+      background-color: color(grey-dark);
+    }
+  }
+}
+
+// z-index
+@mixin z-index($key) {
+  z-index: z-index($key);
+}
+
+// css triangles
+@mixin triangle-before($dir, $size, $color) {
+
+  width: 0;
+  height: 0;
+  content: ".";
+  color: transparent;
+  position: absolute;
+  top: - $size;
+  right: $size;
+
+  @if $dir==top {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-bottom: $size solid $color;
+  }
+  @else if $dir==bottom {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-top: $size solid $color;
+  }
+  @else if $dir==left {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-right: $size solid $color;
+  }
+  @else if $dir==right {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left: $size solid $color;
+  }
+}
+
+
+// tuncate text
+@mixin truncate($truncation-boundary) {
+  max-width: $truncation-boundary;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// defaul links
+@mixin default-link {
+  text-decoration: none;
+  color: color(grey-dark);
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+// center conatiners for all your needs
+@mixin container($size) {
+  max-width: $size;
+  width: $size;
+  margin: 0 auto;
+}
+
+// buttons
+@mixin button($backColor, $textColor) {
+  background-color: $backColor;
+  color: $textColor;
+  padding: gratio(3);
+  border: 0;
+  display: block;
+  border-radius: 3px;
+  transition: .1s ease;
+  &:hover {
+    background-color: darken($backColor, 5%);
+  }
+}
+
+// display inline-block
+@mixin inline-block($width, $align) {
+  display: inline-block;
+  width: $width;
+  vertical-align: $align;
+}
+
+// circle with icon in middle
+@mixin clircle-with-icon($containerSize, $containerColor, $iconHeight) {
+  display: inline-block;
+  width: $containerSize;
+  height: $containerSize;
+  border-radius: 50%;
+  background: $containerColor;
+  position: relative;
+  img {
+    height: $iconHeight;
+    display: block;
+    margin: 0 auto;
+    @include centerer-absolute(true,
+    true);
+  }
+}
+
+// text shadow
+@mixin textShadow {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .20);
+}
+
+@mixin boxShadow {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .20);
+}
+
+@mixin boxShadowBig {
+  box-shadow: 0 15px 35px rgba(64, 64, 79, .15), 0 5px 15px rgba(0, 0, 0, .07);
+}
+
+// centering mixin
+@mixin centerer-absolute($horizontal: true, $vertical: true) {
+  position: absolute;
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+  }
+  @else if ($horizontal) {
+    left: 50%;
+
+    transform: translate(-50%, 0);
+  }
+  @else if ($vertical) {
+    top: 50%;
+
+    transform: translate(0, -50%);
+  }
+}

@@ -1,2 +1,22 @@
-@import "styles/global-vars";
-@import "styles/base";
+@import "styles/general/mixins-base";
+// general
+@import "styles/general/reset";
+@import "styles/general/functions";
+@import "styles/general/variables";
+@import "styles/general/responsive";
+@import "styles/general/base";
+@import "styles/general/animations";
+
+// fonts
+@import "styles/general/fonts/font-gilroy-regular";
+@import "styles/general/fonts/font-gilroy-bold";
+
+// component
+@import "styles/components/main-container";
+@import "styles/components/sidebar";
+@import "styles/components/header";
+@import "styles/components/footer";
+
+// views
+@import "styles/views/blog-archive";
+@import "styles/views/single-post";

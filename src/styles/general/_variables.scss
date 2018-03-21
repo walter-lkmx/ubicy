@@ -1,0 +1,74 @@
+// breakpoints
+$breakpoints: (
+    'small' : 320px,
+    'medium': 640px,
+    'large' : 920px,
+    'wide'  : 1200px,
+    'mega'  : 1400px,
+);
+
+// super z-index
+$z-index: (
+  'super'      : 999999999,
+  'modal'      : 200,
+  'popover'    : 150,
+  'navigation' : 100,
+  'share-type' : 41,
+  'share'      : 40,
+  'click-catcher' : 10,
+  'first-level' : 1,
+  'underground' : 0
+);
+
+// proportions
+$goldenProportions: (
+    0 : rem(3px),
+    1 : rem(5px),
+    2 : rem(8px),
+    3 : rem(16px),
+    4 : rem(21px),
+    5 : rem(34px),
+    6 : rem(55px),
+    7 : rem(89px),
+    8 : rem(144px),
+    9 : rem(233px),
+    10 : rem(377px),
+    11 : rem(610px),
+    12 : rem(987px)
+  );
+
+// brand color
+$colors: (
+  orange     : #EE2C2C,
+  red    : #EE2C2C,
+  yellow     : #EFC050,
+  black      : #000,
+  grey-dark  : #414042,
+  grey-light : #F1F3F8,
+  green      : #55B4B0,
+  blue       : #4183D7,
+  google     : #D62D20,
+  facebook   : #3B5998,
+  twitter   : #55acee,
+  instagram   : #e1306c,
+  orange-gradient: linear-gradient(-180deg, #FD8400 0%, #FD2900 100%),
+  orange-gradient-inverted: linear-gradient(180deg, #FD2900 0%, #FD2900 100%)
+);
+
+$ubicy-colors: (
+  turquoise: hsla(180, 63%, 48%, 1),
+  blue: hsla(200, 60%, 49%, 1),
+  purple-dark: hsla(270, 50%, 39%, 1),
+  purple-light: hsla(288, 56%, 44%, 1),
+  violet: hsla(300, 60%, 49%, 1),
+  pomegranate: hsla(340, 61%, 49%, 1),
+  red: hsla(352, 74%, 54%, 1),
+  orange: hsla(3, 95%, 61%, 1),
+  yellow: hsla(48, 97%, 50%, 1),
+  purple-violet: linear-gradient(150deg, hsla(270, 50%, 39%, 1) 15%, hsla(288, 56%, 44%, 1) 50%, hsla(300, 60%, 49%, 1) 95%),
+); 
+
+
+
+
+$arrayColors-ubicy: #9532AE,#EF9199,#E8608A,#C04589,#8F3192,#63218F,#4B186C,#33104A;

@@ -1,0 +1,14 @@
+.main-container {
+  @include respond-to(small wide) {
+    @include container(100%);
+  }
+  @include respond-to(wide mega) {
+    @include container(1120px);
+  }
+  @include respond-to(mega) {
+    @include container(1120px);
+  }
+  margin-bottom: gratio(9) !important;
+  padding: 0 gratio(3);
+  position: relative;
+}

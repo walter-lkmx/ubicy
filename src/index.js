@@ -4,6 +4,7 @@ import './style.scss';
 import Router from './util/Router';
 import common from './routes/common';
 import home from './routes/home';
+import singlePost from './routes/singlePost';
 
 /**
  * Populate Router instance with DOM routes
@@ -14,6 +15,8 @@ const routes = new Router({
   common,
   /** Home page */
   home,
+  /** Single post */
+  singlePost,
   /** About Us page, note the change from about-us to aboutUs. */
 });
 

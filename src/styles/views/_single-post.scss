@@ -1,0 +1,67 @@
+body.single-post {
+  header {
+    @include z-index(first-level);
+    position: relative;
+    .header-container {
+      margin-bottom: 0;
+      border-bottom: 0;
+      background: rgba(white, 0.9);
+    }
+  }
+  main.main-container {
+    @include container(100%);
+    margin-top: -75px;
+    padding: 0;
+    section.featured-image {
+      height: gratio(11);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: gratio(5);
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    section.post {
+      @include container(70%);
+        margin-top: - gratio(7);
+        position: relative;
+      h1.post-title {
+        @include container(80%);
+        font-size: gratio(5);
+        margin-bottom: gratio(5);
+        background: white;
+        width: auto;
+        display: inline-block;
+        padding: gratio(3) gratio(6) gratio(3) gratio(2);
+      }
+      .content {
+        img {
+          width: 100%;
+          height: auto;
+        }
+        h1, h2, h3, h4, h5, h6 {
+          @include container(80%);
+          font-size: gratio(4);
+          margin-top: gratio(7);
+          margin-bottom: gratio(5);
+        }
+        p, ol, ul {
+          @include container(70%);
+          font-size: gratio(3);
+          margin-bottom: gratio(5);
+          &.paragraph-img {
+            @include container(100%);
+            margin-bottom: gratio(5);
+          }
+        }
+        ol, ul {
+          list-style: inherit;
+          padding-left: gratio(6);
+          li {
+          }
+        }
+      }
+    }
+  }
+}

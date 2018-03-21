@@ -1,0 +1,65 @@
+aside.sidebar {
+  @include inline-block(33.34%, top);
+  position: relative;
+  height: 400px;
+  padding-left: gratio(5);
+  h2.title {
+    text-transform: uppercase;
+    font-size: gratio(3);
+    margin-bottom: gratio(3);
+    padding-bottom: gratio(3);
+    border-bottom: 1px solid rgba(black, 0.1);
+  }
+  nav {
+    margin-bottom: gratio(5);
+    &.featured {
+      ol {
+        list-style: none;
+        counter-reset: li;
+        font-size: 0;
+        li {
+          counter-increment: li;
+          font-size: 0;
+          margin-bottom: gratio(2);
+          &:before {
+            @include inline-block(auto, middle);
+            font-size: gratio(5);
+            content: counter(li);
+            margin-right: gratio(1);
+            color: rgba(black, 0.3);
+          }
+          a {
+            @include inline-block(88%, middle);
+            font-size: gratio(3);
+            padding-left: gratio(3);
+            color: black;
+          }
+        }
+      }
+    }
+    &.categories {
+      li.categories {
+        background: transparent !important;
+      }
+      li {
+        display: inline-block;
+        margin-right: gratio(2);
+        margin-bottom: gratio(2);
+        @for $i from 1 through length($arrayColors-ubicy) {
+          &:nth-child(#{length($arrayColors-ubicy)}n+#{$i}) {
+            background-color: nth($arrayColors-ubicy, $i);
+            &:hover {
+              background-color: darken(nth($arrayColors-ubicy, $i), 10%);
+            }
+          }
+        }
+        a {
+          color: white;
+          padding: gratio(1) gratio(2);
+          font-size: 0.9rem;
+          display: block;
+        }
+      }
+    }
+  }
+}

@@ -116,10 +116,10 @@ module.exports = {
       new BrowserSyncPlugin({
         notify: false,
         host: 'localhost',
-        port: 4000,
+        port: 4001,
         logLevel: 'silent',
         files: ['./*.php'],
-        proxy: 'http://localhost:9009/',
+        proxy: 'http://localhost:9010/',
       }),
   ].filter(Boolean),
 };

@@ -1,0 +1,26 @@
+header {
+  .header-container {
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    background-color: rgba(white, .95);
+    margin-bottom: gratio(5);
+    padding: gratio(3) gratio(4);
+    @include respond-to(small large) {
+      margin-bottom: 0 !important;
+    }
+    section.brand {
+      img {
+        &.color {
+          @include inline-block(gratio(8), top);
+        }
+        &.blog {
+          @include inline-block(gratio(6), top);
+          margin-left: gratio(0);
+        }
+      }
+    }
+    section.search {
+      // height: gratio(6);
+      border-left: 0;
+    }
+  }
+}

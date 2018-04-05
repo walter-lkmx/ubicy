@@ -62,4 +62,7 @@ aside.sidebar {
       }
     }
   }
+  @include respond-to(small medium) {
+    display: none;
+  }
 }

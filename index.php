@@ -8,6 +8,9 @@
     <section class="post">
       <div class="content">
         <h1><a href="<?php the_permalink(); ?>"><?php the_title() ?></a></h1>
+        <div class="featured-image-mobile">
+          <?php the_post_thumbnail() ?>
+        </div>
         <section class="excerpt">
           <?php echo get_excerpt() ?>
         </section>
@@ -28,11 +31,11 @@
     </section>
     <?php endwhile; ?>
     <section class="pagination">
-      <div class="nav-previous alignleft">
-        <?php next_posts_link( 'Older posts' ); ?>
+      <div class="nav-previous alignright">
+        <?php next_posts_link( '<div class="arrow-prev">Posts anteriores</div>' ); ?>
       </div>
-      <div class="nav-next alignright">
-        <?php previous_posts_link( 'Newer posts' ); ?>
+      <div class="nav-next alignleft">
+        <?php previous_posts_link( '<div class="arrow-next">Posts recientes</div>' ); ?>
       </div>
       <?php else : ?>
       <p>

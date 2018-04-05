@@ -34,6 +34,18 @@ main.main-container {
   }
   section.first-posts {
     @include inline-block(33.33%, top);
+    @include respond-to(small medium) {
+      background-color: #ff0;
+      @include inline-block(100%, top);
+      height:gratio(8);
+      margin-bottom: 0;
+      &:first-child {
+        margin-top: gratio(4);
+      }
+      &:nth-child(3){
+        margin-bottom: gratio(6) !important;
+      }
+    }
     height: gratio(10);
     margin-bottom: gratio(7);
     position: relative;
@@ -67,6 +79,9 @@ main.main-container {
           text-transform: uppercase;
           color: white;
           font-size: gratio(5);
+          @include respond-to(small medium) {
+            font-size: gratio(4);
+          }
         }
       }
     }
@@ -75,6 +90,11 @@ main.main-container {
       @include z-index(underground);
       width: auto;
       height: 130%;
+      @include respond-to(small medium) {
+        @include centerer-absolute(true, true);
+        width: auto;
+        height: auto;
+      }
     }
   }
   section.container-posts {
@@ -99,6 +119,9 @@ main.main-container {
           font-size: gratio(3);
           text-transform: uppercase;
           margin-bottom: gratio(2);
+          @include respond-to(small medium) {
+            margin-bottom: 0;
+          }
           a {
             color: black;
             display: block;
@@ -107,6 +130,25 @@ main.main-container {
               color: tint(pomegranate);
             }
           }
+        }
+        .featured-image-mobile {
+          display: none;
+        @include respond-to(small medium) {
+          width: 100%;
+          display: inline-block;
+          position: relative;
+          overflow: hidden;
+          height: gratio(9);
+          margin: gratio(3) 0;
+          img {
+            height: auto;
+            width: 100%;
+          }
+        }
+      }
+        @include respond-to(small medium) {
+          padding: 0;
+
         }
         .excerpt {
           font-size: gratio(3);
@@ -118,6 +160,10 @@ main.main-container {
           .author {
             font-size: gratio(3);
             margin-bottom: gratio(1);
+            @include respond-to(small medium) {
+                width: 30%;
+                display: inline-block;
+            }
           }
           .date-category {
             span {
@@ -125,20 +171,45 @@ main.main-container {
               font-size: gratio(3);
               color: rgba(black, 0.6);
               text-transform: capitalize;
+              @include respond-to(small medium) {
+                width: 100%;
+                display: block;
+                margin-bottom: gratio(1);
+              }
             }
             img {
               @include inline-block(gratio(4), top);
               opacity: 0.3;
             }
-            ul {
+            .post-categories { 
               @include inline-block(60%, top);
               li {
                 padding-left: gratio(1);
+                display: inline-block !important;
                 a {
                   font-size: gratio(3);
                   color: rgba(black, 0.6);
+                  &:after {
+                    content: ", ";
+                  }
+                }
+                &:last-child {
+                  a {
+                    &:after {
+                      content: "";
+                    }
+                  }
                 }
               }
+              @include respond-to(small medium) {
+                width: 90%;
+                display: inline-block;
+              }
+            }
+            @include respond-to(small medium) {
+                width: 100%;
+                display: inline-block;
+
             }
           }
         }
@@ -146,6 +217,13 @@ main.main-container {
           a {
             font-size: gratio(3);
           }
+        }
+        @include respond-to(small medium) {
+          position: relative;
+          //margin-top: 300px;
+          width: 100%;
+          //clear: both;
+          //float: right;
         }
       }
       .featured-image {
@@ -159,12 +237,73 @@ main.main-container {
           width: auto;
           height: 100%;
         }
+        @include respond-to(small medium) {
+          //position: absolute;
+          //margin-top: -520px;
+          display: none !important;
+          //clear: both;
+          //float: left;
+          /*img {
+            height: auto;
+          }*/
+        }
       }
+    }
+    @include respond-to(small medium) {
+          width: 100%;
     }
   }
   section.pagination {
-    a {
-      font-size: gratio(3);
+    span.divisor {
+      display: inline-block;
+      margin: 0 gratio(3);
     }
+    .nav-previous {
+      /*background-color: rgba(gray, 0.1);
+      border: 1px solid rgba(gray, 0.5);
+      border-top-right-radius: gratio(4);
+      border-bottom-right-radius: gratio(4);
+      border-left: none;
+      padding: gratio(2);*/
+      &.alignright {
+        float: right;
+      }
+      a {
+      font-size: gratio(3);
+      //font-weight: 600;
+      font-family: 'Gilroy-regular';
+      //text-transform: uppercase;
+      color: rgba(color(grey-dark), 0.9);
+      div.arrow-prev {
+        background-color: rgba(gray, 0.1);
+        padding: gratio(1) gratio(2);
+      }
+      }
+    }
+    .nav-next {
+      /*background-color: rgba(gray, 0.1);
+      border: 1px solid rgba(gray, 0.5);
+      border-top-left-radius: gratio(4);
+      border-bottom-left-radius: gratio(4);
+      border-right: none;
+      padding: gratio(2);*/
+      &.alignleft {
+        float: left;
+      }
+      a {
+      font-size: gratio(3);
+      font-weight: 600;
+      font-family: 'Gilroy-regular';
+      //text-transform: uppercase;
+      color: rgba(color(grey-dark), 0.9);
+      div.arrow-next {
+        background-color: rgba(gray, 0.1);
+        padding: gratio(1) gratio(2);
+      }
+      }
+    }
+  }
+  @include respond-to(small medium) {
+    margin-bottom: gratio(7) !important;
   }
 }

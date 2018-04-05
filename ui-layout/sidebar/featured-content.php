@@ -2,7 +2,7 @@
   <h2 class="title">Te recomendamos leer</h2>
   <ol>
     <?php rewind_posts(); ?>
-    <?php query_posts('tag=destacada'); ?>
+    <?php query_posts('posts_per_page=5&orderby=rand&tag=destacada'); ?>
     <?php if ( have_posts() ) : ?>
     <?php while ( have_posts() ) : the_post(); ?>
     <li>

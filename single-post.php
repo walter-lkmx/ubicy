@@ -20,6 +20,7 @@
     </section>
     <section class="content">
       <?php the_content() ?>
+      <div class="category-list"><?php the_tags('Tags <br /><p class="label-tags">', '</p> <p class="label-tags">', '</p>'); ?></p></div>
     </section>
     <?php endwhile; ?>
     <?php endif; ?>

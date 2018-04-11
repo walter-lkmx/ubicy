@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<main class="main-container">
+  <main class="main-container">
   <?php if ( have_posts() ) : ?>
   <?php while ( have_posts() ) : the_post(); ?>
   <section class="featured-image">
@@ -20,7 +20,7 @@
     </section>
     <section class="content">
       <?php the_content() ?>
-      <div class="category-list"><?php the_tags('Tags <br /><p class="label-tags">', '</p> <p class="label-tags">', '</p>'); ?></p></div>
+      <div class="tag-list"><?php the_tags('Tags: &nbsp;&nbsp;  <p class="label-tags">', '</p> <p class="label-tags">', '</p>'); ?></p></div>
     </section>
     <?php endwhile; ?>
     <?php endif; ?>

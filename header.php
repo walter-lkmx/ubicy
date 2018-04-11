@@ -12,8 +12,11 @@
   <header>
     <div class="header-container">
       <section class="brand">
-        <a href="<?php echo home_url(); ?>"><img class="color" src="<?php bloginfo('template_url'); ?>/img/ubicy-logo-color.svg" alt="">
+        <a href="<?php echo home_url(); ?>/"><img class="color" src="<?php bloginfo('template_url'); ?>/img/ubicy-logo-color.svg" alt="">
           <img class="blog" src="<?php bloginfo('template_url'); ?>/img/ubicy-blog.svg" alt=""></a>
+      </section>
+      <section class="go-portal">
+          <a href="https://beta.ubicy.com"><span>Visita Ubicy.com</span><img src="<?php bloginfo('template_url'); ?>/img/icons8-double_right.svg" alt=""></a>
       </section>
     </div>
   </header>

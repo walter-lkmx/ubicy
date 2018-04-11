@@ -1,7 +1,12 @@
 aside.sidebar {
   @include inline-block(33.34%, top);
+  @include respond-to(small medium) {
+    @include inline-block(100%, top);
+    padding-left: 0;
+    margin-top: gratio(6);
+  }
   position: relative;
-  height: 400px;
+  min-height: 400px;
   padding-left: gratio(5);
   h2.title {
     text-transform: uppercase;
@@ -45,6 +50,7 @@ aside.sidebar {
         display: inline-block;
         margin-right: gratio(2);
         margin-bottom: gratio(2);
+        border-radius: 3px;
         @for $i from 1 through length($arrayColors-ubicy) {
           &:nth-child(#{length($arrayColors-ubicy)}n+#{$i}) {
             background-color: nth($arrayColors-ubicy, $i);
@@ -61,8 +67,5 @@ aside.sidebar {
         }
       }
     }
-  }
-  @include respond-to(small medium) {
-    display: none;
   }
 }

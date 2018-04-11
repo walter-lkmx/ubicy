@@ -17,11 +17,17 @@ footer {
     border-bottom: 1px solid rgba(black, 0.10);
     .social {
       display: inline-block;
-      width: 20%;
+      width: 30%;
       @include respond-to(small large) {
         width: 100%;
         text-align: center;
         margin-bottom: gratio(5);
+      }
+      span {
+        font-size: gratio(3);
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: gratio(3);
       }
       img {
         vertical-align: middle;
@@ -33,7 +39,7 @@ footer {
       }
     }
     .menu {
-      width: 80%;
+      width: 70%;
       font-size: gratio(3);
       display: inline-block;
       vertical-align: middle;

@@ -1,5 +1,10 @@
 <?php get_header(); ?>
 <main class="main-container">
+    <nav class="featured-categories">
+      <a href="<?php echo home_url(); ?>/secciones/bienes-raices">Bienes Raíces</a>
+      <a href="<?php echo home_url(); ?>/secciones/noticias">Noticias</a>
+      <a href="<?php echo home_url(); ?>/secciones/tips">Tips</a>
+    </nav>
     <section class="title-archive">
       <?php if (is_category()) { ?>
       <h2><span class="marker"><?php single_cat_title(); ?></span></h2>
@@ -19,6 +24,9 @@
     <?php if ( have_posts() ) : ?>
     <?php while ( have_posts() ) : the_post(); ?>
     <section class="post">
+      <div class="featured-image">
+        <?php the_post_thumbnail() ?>
+      </div>
       <div class="content">
         <h1><a href="<?php the_permalink(); ?>"><?php the_title() ?></a></h1>
         <section class="excerpt">
@@ -34,9 +42,6 @@
             <?php the_category() ?>
           </div>
         </section>
-      </div>
-      <div class="featured-image">
-        <?php the_post_thumbnail() ?>
       </div>
     </section>
     <?php endwhile; ?>

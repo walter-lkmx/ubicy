@@ -2,6 +2,7 @@
 <footer>
   <section class="social-menu ">
     <div class="social ">
+      <span>Síguenos: </span>
       <a target="blank " href=""><img src="<?php bloginfo('template_url'); ?>/img/icons8-facebook.svg " alt=" "></a>
       <a target="blank " href="https://twitter.com/UbicyTijuana"><img src="<?php bloginfo('template_url'); ?>/img/icons8-twitter.svg " alt=" "></a>
       <a target="blank " href="https://www.instagram.com/ubicytijuana"><img src="<?php bloginfo('template_url'); ?>/img/icons8-instagram_new.svg " alt=" "></a>

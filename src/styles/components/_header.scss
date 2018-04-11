@@ -1,13 +1,15 @@
 header {
   .header-container {
-    border-bottom: 1px solid rgba(0, 0, 0, .1);
-    background-color: rgba(white, .95);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: rgba(white, 0.95);
     margin-bottom: gratio(5);
     padding: gratio(3) gratio(4);
-    @include respond-to(small large) {
-      margin-bottom: 0 !important;
+    font-size: 0;
+    @include respond-to(small medium) {
+      margin-bottom: gratio(3);
     }
     section.brand {
+      @include inline-block(40%, middle);
       img {
         &.color {
           @include inline-block(gratio(8), top);
@@ -18,9 +20,38 @@ header {
         }
       }
     }
-    section.search {
-      // height: gratio(6);
-      border-left: 0;
+    section.go-portal {
+      @include inline-block(60%, middle);
+      text-align: right;
+      font-size: gratio(3);
+      a {
+        @include inline-block(auto, middle);
+        @include button(transparent, black);
+        padding: gratio(2) gratio(3);
+        display: inline-block;
+        text-shadow: none;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        &:hover {
+          span {
+            color: tint(purple-light);
+          }
+          img {
+            opacity: 1;
+            @extend .bounce-right;
+          }
+        }
+        span {
+          text-decoration: underline;
+        }
+        img {
+          margin-left: gratio(2);
+          height: gratio(3);
+          display: inline-block;
+          vertical-align: middle;
+          opacity: 0.5;
+        }
+      }
     }
   }
 }

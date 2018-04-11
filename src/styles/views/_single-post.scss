@@ -28,11 +28,17 @@ body.single-post {
       }
     }
     section.post {
-      @include container(70%);
-        margin-top: - gratio(7);
-        position: relative;
+      @include respond-to(small medium) {
+        @include container(90%);
+      }
+      @include container(80%);
+      margin-top: - gratio(7);
+      position: relative;
       h1.post-title {
         @include container(80%);
+        @include respond-to(small medium) {
+          @include container(100%);
+        }
         font-size: gratio(5);
         margin-bottom: gratio(5);
         background: white;
@@ -45,16 +51,27 @@ body.single-post {
           width: 100%;
           height: auto;
         }
-        h1, h2, h3, h4, h5, h6 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
           @include container(80%);
           font-size: gratio(4);
           margin-top: gratio(7);
           margin-bottom: gratio(5);
         }
-        p, ol, ul {
+        p,
+        ol,
+        ul {
           @include container(70%);
           font-size: gratio(3);
           margin-bottom: gratio(5);
+          a {
+            color: tint(pomegranate);
+            text-decoration: underline;
+          }
           &.paragraph-img {
             @include container(100%);
             margin-bottom: gratio(5);
@@ -64,7 +81,8 @@ body.single-post {
             margin-bottom: gratio(3);
           }
         }
-        ol, ul {
+        ol,
+        ul {
           list-style: inherit;
           padding-left: gratio(3);
           li {
@@ -76,44 +94,29 @@ body.single-post {
                   margin-left: gratio(4);
                   margin-bottom: 0;
                   li {
-
                   }
                 }
               }
             }
           }
         }
-        .category-list {
+        .tag-list {
           @include container(70%);
           padding: gratio(7) 0 gratio(5);
           text-align: left;
-            margin:0;
-            font-size: 16px;
-            //display: inline-block;
-            .label-tags {
-              background-color: rgba(color(grey-dark), 0.1);
-              color: color(grey-dark);
-              display: inline;
-              margin: gratio(3) 0 0 0;
-              padding: gratio(1) gratio(2);
-              a {
-                color: color(grey-dark);
-              }
+          margin: 0;
+          font-size: 16px; //display: inline-block;
+          .label-tags {
+            background-color: rgba(tint(orange), 1);
+            color: white;
+            display: inline-block !important;
+            width: auto;
+            padding: gratio(1) gratio(2);
+            a {
+              color: white;
             }
+          }
         }
-        /*.category-list {
-            p.label-tags {
-              display: inline-block;
-              a{
-                background-color: rgba(color(grey-dark), 0.1);
-                padding: gratio(1) gratio(2);
-                color: color(grey-dark);
-              }
-            }
-          }*/
-      }
-      @include respond-to(small medium) {
-        @include container(90%);
       }
     }
   }
